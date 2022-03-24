@@ -114,12 +114,15 @@ export default class Game {
 	}
 
 	togglePause() {
-		if (this.gamestate === GAMESTATE.PAUSED) {
-			this.gamestate = GAMESTATE.RUNNING
-		} else if (this.gamestate === GAMESTATE.MENU) {
-			return
-		} else {
-			this.gamestate = GAMESTATE.PAUSED
+		switch (this.gamestate) {
+			case GAMESTATE.PAUSED:
+				this.gamestate = GAMESTATE.RUNNING
+				break
+			case GAMESTATE.RUNNING:
+				this.gamestate = GAMESTATE.PAUSED
+				break
+			case GAMESTATE.MENU:
+				break
 		}
 	}
 
