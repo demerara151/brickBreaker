@@ -16,7 +16,7 @@ export default class InputHandler {
 					game.togglePause()
 					break
 
-				case "Shift":
+				case "Enter":
 					game.start()
 					break
 			}

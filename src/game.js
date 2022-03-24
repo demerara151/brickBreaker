@@ -95,7 +95,7 @@ export default class Game {
 			ctx.fillStyle = "white"
 			ctx.textAlign = "center"
 			ctx.fillText(
-				"Press SHIFT to Start",
+				"Press Enter to Start",
 				this.gameWidth / 2,
 				this.gameHeight / 2
 			)
