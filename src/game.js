@@ -133,12 +133,16 @@ export default class Game {
 	}
 
 	count(head) {
-		if (this.lives >= 2) {
-			head.textContent = this.lives + " Balls Left"
-		} else if (this.lives >= 1) {
-			head.textContent = this.lives + " Ball Left"
-		} else if (this.lives >= 0) {
-			head.textContent = "GAME OVER"
+		switch (this.lives) {
+			default:
+				head.textContent = `${this.lives} Balls Left`
+				break
+			case 1:
+				head.textContent = `${this.lives} Ball Left`
+				break
+			case 0:
+				head.textContent = "GAME OVER"
+				break
 		}
 	}
 
