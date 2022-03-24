@@ -116,6 +116,8 @@ export default class Game {
 	togglePause() {
 		if (this.gamestate === GAMESTATE.PAUSED) {
 			this.gamestate = GAMESTATE.RUNNING
+		} else if (this.gamestate === GAMESTATE.MENU) {
+			return
 		} else {
 			this.gamestate = GAMESTATE.PAUSED
 		}
