@@ -147,10 +147,13 @@ export default class Game {
 	}
 
 	countLevel(crtLv) {
-		if (this.currentLevel < 3) {
-			crtLv.textContent = "LEVEL " + (this.currentLevel + 1)
-		} else if (this.currentLevel === 3) {
-			crtLv.textContent = "FINAL STAGE"
+		switch (this.currentLevel) {
+			default:
+				crtLv.textContent = `LEVEL ${this.currentLevel + 1}`
+				break
+			case 3:
+				crtLv.textContent = "FINAL STAGE"
+				break
 		}
 	}
 
